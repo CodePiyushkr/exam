@@ -1,0 +1,57 @@
+
+ EXPERIMENT 3: Image Sampling and Quantization
+
+Objective
+To perform image sampling and quantization on a grayscale image using Python, OpenCV,
+and NumPy.
+Theory
+
+1. Image Sampling
+• Definition: Sampling refers to selecting discrete pixel points to represent a digital
+image in spatial coordinates (x, y).
+• Concept: When we reduce the sampling rate (i.e., reduce the number of pixels), the
+image resolution decreases, leading to a loss in detail.
+• Example: Reducing an image from 512×512 pixels to 128×128 pixels will make it
+appear pixelated.
+
+2. Image Quantization
+• Definition: Quantization refers to reducing the number of gray levels (intensity levels)
+in an image.
+• Concept: In an 8-bit grayscale image, each pixel has intensity values ranging from 0
+to 255 (256 gray levels). By reducing this range to fewer levels (for example, 16 or
+32), tonal details are lost, but memory usage decreases.
+• Example:
+o 8-bit image → 256 gray levels
+o 4-bit image → 16 gray levels
+
+3. Thresholding (Binary Quantization)
+• Thresholding is a special case of quantization where the image is converted into two
+gray levels — black (0) and white (255).
+• A threshold value is chosen (e.g., 100). Pixels with intensity below the threshold are
+set to black, and those above are set to white.
+
+Algorithm
+1. Import necessary libraries (cv2, numpy, matplotlib if needed).
+2. Load the input image in grayscale mode using cv2.imread().
+3. Apply thresholding using cv2.threshold() to perform binary quantization.
+4. Display the original and quantized (binary) images using cv2.imshow().
+5. Wait for a key press and then close all image windows.
+
+Python Code:
+
+
+
+
+
+import cv2
+# Read the image in grayscale
+img = cv2.imread("C:/Users/Surjit/OneDrive/Desktop/my.jpeg",
+cv2.IMREAD_GRAYSCALE)
+# Apply threshold value 120
+ret, binary = cv2.threshold(img, 100, 255, cv2.THRESH_BINARY)
+# Show the result
+cv2.imshow("Original Image", img)
+cv2.imshow("Binary Image (Threshold=100)", binary)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+ Paste Output Here
