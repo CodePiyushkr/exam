@@ -6,6 +6,7 @@ To perform image sampling and quantization on a grayscale image using Python, Op
 and NumPy.
 Theory
 
+
 1. Image Sampling
 
 • Definition: Sampling refers to selecting discrete pixel points to represent a digital
